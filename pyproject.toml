@@ -3,13 +3,34 @@ name = "docopt-typed"
 version = "0.1.0"
 description = "A lightweight helper around docopt-ng adding automatic type conversion"
 readme = "README.md"
+license = { file = "LICENSE" }
 authors = [
     { name = "John Scillieri" }
 ]
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 dependencies = [
     "docopt-ng>=0.9.0",
 ]
+keywords = ["docopt", "argparse", "argument", "parsing"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries",
+]
+
+[project.urls]
+Homepage = "https://github.com/johnscillieri/docopt-typed"
+Repository = "https://github.com/johnscillieri/docopt-typed"
+Issues = "https://github.com/johnscillieri/os-normalizer/issues"
+Changelog = "https://github.com/johnscillieri/docopt-typed"
 
 [build-system]
 requires = ["hatchling"]
@@ -17,13 +38,15 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
+    "nox>=2025.5.1",
+    "nox-uv>=0.6.2",
     "pytest>=8.4.2",
     "ruff>=0.12.10",
 ]
 
 [tool.ruff]
 line-length = 120
-target-version = "py313"
+target-version = "py311"
 select = [
     "ALL", # include all the rules, including new ones
 ]
