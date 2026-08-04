@@ -1,17 +1,10 @@
-"""
-Test cases for docopt-typed wrapper
-"""
-
-import sys
-from io import StringIO
-from contextlib import redirect_stdout, redirect_stderr
+"""Test cases for docopt-typed wrapper"""
 
 from docopt_typed import docopt_typed
 
 
-def test_basic_parsing():
+def test_basic_parsing() -> None:
     """Test basic argument parsing with type conversion"""
-
     doc = """
     Test program
 
@@ -41,14 +34,13 @@ def test_basic_parsing():
     # Verify values
     assert args.speed == 50, f"Expected speed=50, got {args.speed}"
     assert args.count == 3.2, f"Expected count=3.2, got {args.count}"
-    assert args.verbose == True, f"Expected verbose=True, got {args.verbose}"
+    assert args.verbose is True, f"Expected verbose=True, got {args.verbose}"
 
     print("✓ Basic parsing test passed\n")
 
 
-def test_short_forms():
+def test_short_forms() -> None:
     """Test with short forms of arguments"""
-
     doc = """
     Test program with short forms
 
@@ -77,14 +69,13 @@ def test_short_forms():
     # Verify values
     assert args.s == 100, f"Expected speed=100, got {args.s}"
     assert args.c == 5.7, f"Expected count=5.7, got {args.c}"
-    assert args.v == False, f"Expected verbose=False, got {args.v}"
+    assert args.v is False, f"Expected verbose=False, got {args.v}"
 
     print("✓ Short forms test passed\n")
 
 
-def test_string_and_other_types():
+def test_string_and_other_types() -> None:
     """Test with string conversion and other types"""
-
     doc = """
     Test program with various types
 
@@ -118,9 +109,8 @@ def test_string_and_other_types():
     print("✓ String and other types test passed\n")
 
 
-def test_boolean_conversions():
+def test_boolean_conversions() -> None:
     """Test various boolean conversion scenarios"""
-
     doc = """
     Test program with boolean values
 
@@ -152,9 +142,8 @@ def test_boolean_conversions():
     print("✓ Boolean conversions test passed\n")
 
 
-def test_attribute_access():
+def test_attribute_access() -> None:
     """Test that arguments can be accessed as attributes"""
-
     doc = """
     Test program for attribute access
 
