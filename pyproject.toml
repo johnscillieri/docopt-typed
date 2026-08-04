@@ -29,7 +29,7 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/johnscillieri/docopt-typed"
 Repository = "https://github.com/johnscillieri/docopt-typed"
-Issues = "https://github.com/johnscillieri/os-normalizer/issues"
+Issues = "https://github.com/johnscillieri/docopt-typed/issues"
 Changelog = "https://github.com/johnscillieri/docopt-typed"
 
 [build-system]
