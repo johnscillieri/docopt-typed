@@ -1,6 +1,6 @@
 [project]
 name = "docopt-typed"
-version = "0.1.0"
+version = "0.1.2"
 description = "A lightweight helper around docopt-ng adding automatic type conversion"
 readme = "README.md"
 license = { file = "LICENSE" }
