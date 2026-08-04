@@ -8,3 +8,7 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Tooling caches
+.nox/
+.ruff_cache/

@@ -1,3 +1,5 @@
+"""Nox sessions for testing and linting docopt-typed"""
+
 import nox
 from nox_uv import session
 
@@ -11,3 +13,10 @@ nox.options.default_venv_backend = "uv"
 def tests(session: nox.Session) -> None:
     """Run test suite with pytest."""
     session.run("uv", "run", "pytest", "-q")
+
+
+@session(python=["3.13"])
+def lint(session: nox.Session) -> None:
+    """Lint the codebase with ruff."""
+    session.run("uv", "run", "ruff", "check", ".")
+    session.run("uv", "run", "ruff", "format", "--check", "noxfile.py", "src", "tests")

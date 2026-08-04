@@ -41,17 +41,30 @@ dev = [
     "nox>=2025.5.1",
     "nox-uv>=0.6.2",
     "pytest>=8.4.2",
-    "ruff>=0.12.10",
+    "ruff>=0.16.1",
 ]
 
 [tool.ruff]
 line-length = 120
 target-version = "py311"
+
+[tool.ruff.lint]
 select = [
     "ALL", # include all the rules, including new ones
 ]
 ignore = [
+    "COM812", # conflicts with the ruff formatter
+    "CPY001", # licensing lives in LICENSE, not in per-file copyright headers
+    "D203",   # incompatible with D211, which ruff prefers
+    "D213",   # incompatible with D212, which ruff prefers
     "D400",
     "D415",
     "T201",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = [
+    "INP001",  # the test suite is intentionally not a package
+    "PLR2004", # comparing against literals is the point of a test
+    "S101",    # pytest is built on assert
 ]
